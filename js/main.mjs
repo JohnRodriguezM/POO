@@ -1,15 +1,41 @@
 // nueva
 // proxima clase a fabricar, la clase docente, con el nombre y los cursos que dicta
 class docente {
-    constructor(
+    #nombre; // solo se hace efectivo cuando se crea el getter o el setter
+    #cursosDicta; //el arra curso dicta tendrá la misma advertencia
+    constructor({nombre,cursosDicta = [],})
     {
-        nombre,
-        cursosDicta = [],
+    this.#nombre = nombre;
+    this.#cursosDicta = cursosDicta;
     }
-    )
-    {
-    this.nombre = nombre;
-    this.cursosDicta = cursosDicta;
+    get getname(){
+        return this.#nombre;
+    }
+    set setname(cambiaNombre){
+        if(typeof cambiaNombre !== "string"){
+            return console.log("El nuevo docente no es valido, porfavor verifica su nombre")
+        }
+        if(!cambiaNombre){
+            return console.log("El espacio del docente está vacio, porfavor verifica")
+        }
+        return this.#nombre = cambiaNombre;
+    }
+    get getCursoDicta(){
+        return this.#cursosDicta;
+    }
+    set setCursoDicta(cambiaCursoDicta){
+        for(let valores of cambiaCursoDicta){
+            if(typeof valores !== "string"){
+                return console.log("Los valores del array de clases no son cadenas de texto.")
+            }
+        }
+        if(cambiaCursoDicta.length === 0){
+            return console.log("No agregaste ningun curso a la modificacion")
+        }
+        if(!(cambiaCursoDicta instanceof Array)){
+            return console.log("No has iniciado un array")
+        }
+        return this.#cursosDicta = cambiaCursoDicta;
     }
 }
 
@@ -42,6 +68,11 @@ const maestrosPlatzi = [
         "Curso de tecnologia para gerentes",
     ]})
 ]
+
+console.log(maestrosPlatzi[0].getname)
+console.log(maestrosPlatzi[0].setname = "Andres Pelaez")// en este momento el nombre del docente de platzi de maestrosPlatzi[0] que era freddy vega cambio a andres pelaez
+console.log(maestrosPlatzi[0].getCursoDicta)
+console.log(maestrosPlatzi[0].setCursoDicta = ["curso unico de software", "curso de google analytics", "curso profesional de AI"])
 //console.log(maestrosPlatzi[0])
 //import { carro } from "./variables.mjs";
 //console.log(carro)
@@ -50,8 +81,18 @@ const maestrosPlatzi = [
 
 
 //
-
-class clases{constructor(paquete){this.paquete = paquete;}}
+// las clases solo van a poder ser vistas y cambiadas a traves de getter(vistas) o setters(cambiadas)
+class clases
+{
+    #paquete
+    constructor(paquete)
+    {
+        this.#paquete = paquete;
+    }
+    get getpaquete(){
+        return this.#paquete;
+    }
+}
 
 const paqueteClases = [
     new clases("clase de desarrollo"),
