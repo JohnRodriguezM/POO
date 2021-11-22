@@ -73,7 +73,7 @@ const maestrosPlatzi = [
     ]})
 ]
 
-console.log(maestrosPlatzi[0].getname)
-console.log(maestrosPlatzi[0].setname = "Andres Pelaez")// en este momento el nombre del docente de platzi de maestrosPlatzi[0] que era freddy vega cambio a andres pelaez
-console.log(maestrosPlatzi[0].getCursoDicta)
-console.log(maestrosPlatzi[0].setCursoDicta = ["curso unico de software", "curso de google analytics", "curso profesional de AI"])
+//console.log(maestrosPlatzi[0].getname)
+//console.log(maestrosPlatzi[0].setname = "Andres Pelaez")// en este momento el nombre del docente de platzi de maestrosPlatzi[0] que era freddy //vega cambio a andres pelaez
+//console.log(maestrosPlatzi[0].getCursoDicta)
+//console.log(maestrosPlatzi[0].setCursoDicta = ["curso unico de software", "curso de google analytics", "curso profesional de AI"])

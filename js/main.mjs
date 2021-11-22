@@ -1,6 +1,15 @@
 // Inicio del documento Js // Manejo en modulos permite generar un mayor orden de la informacion
 // por el momento el import y el export funciona a traves de nombre los archivos con la extension .mjs
 
+
+/*
+PENDIENTE REALIZAR LOS COMENTARIOS EXPLICATIVOS NECESARIOS...cursosAprobados(PUSH TONIGTH)
+
+*/
+
+
+
+
 // La clase docente que se encuentra en el modulo(archivo) claseDocente.mjs desarrolla un prototipo para instancias de objetos de los maestrosPlatzi
 import { docente } from "./claseDocente.mjs";
 // en el array maestrosPlatzi se crean las instancias de la clase derivadas de el prototipo (clase) docente que se encuentra en el mismo archivo(modulo)
@@ -9,167 +18,23 @@ import { maestrosPlatzi } from "./claseDocente.mjs";
 
 
 //
-// las clases solo van a poder ser vistas y cambiadas a traves de getter(vistas) o setters(cambiadas)
-class clases
-{
-    #paquete
-    constructor(paquete)
-    {
-        this.#paquete = paquete;
-    }
-    get getpaquete(){
-        return this.#paquete;
-    }
-}
+// las clases solo van a poder ser vistas y cambiadas a traves de getter(vistas) o setters(cambiadas) //
+import { clases } from "./clase_clases.mjs";
 
-const paqueteClases = [
-    new clases("clase de desarrollo"),
-    new clases("Clase de buen uso de tiempo"),
-    new clases("Clase no relacional"),
-    new clases("Nuevas herramientas de ES6"),
-    new clases("Las futuras herramientas que nos esperan en JS"),
-    new clases("Leve introducción a POO"),
-    new clases("Despida del curso"),
-    new clases("Crea tu primer proyecto con js"),
-    new clases("Solucionando casos de la vida real con JS"),
-    new clases("¿Que es git y cómo usarlo?"),
-    new clases("¿como desarrollar proyectos reales con git?"),
-    new clases("¿por que es necesaria la tecnologia en las empresas?")
-]
+import { paqueteClases } from "./clase_clases.mjs";
 
 
 
 
 
-//et paquete clase
+import { cursos } from "./class_cursos.mjs";
 
-class cursos {constructor({name, clases,docente}) {this.name = name;this.clases = clases; this.docente = docente;}}
-
-let cursoProgBasica = new cursos({
-    name: "Curso programacion básica",
-    clases: [
-        paqueteClases[0], // clase de desarrollo
-        paqueteClases[1],// clase de buen uso de tiempo
-        paqueteClases[2], // clase no relacional
-    ],
-    docente: maestrosPlatzi[0],
-})
-
-/* cursos escuela de javascript*/
-let ecmaScript6 = new cursos({
-    name: "Curso de ecmaScript6+",
-    clases: [
-        paqueteClases[3], // nuevas herramientas de ES6
-        paqueteClases[4] // Las futuras herramientas que nos esperan en JS
-    ],
-    docente: maestrosPlatzi[1],
-})
-
-let basicoJs = new cursos({
-    name : "Curso Basico de Js",
-    clases: [
-        paqueteClases[0], // clase de desarrollo
-        paqueteClases[5], // introduccion a POO
-        paqueteClases[6], //despedida del curso
-    ],
-    docente: maestrosPlatzi[2],
-})
-
-let practicoJs = new cursos({
-    name: "Curso prático de Js",
-    clases: [
-        paqueteClases[1], // clase de buen uso de tiempo
-        paqueteClases[7], // Crea tu primer proyecto con JS
-        paqueteClases[8] // Solucionando problemas de la vida real con JS
-    ],
-    docente: maestrosPlatzi[2],
-})
-/*cierre cursos de javascript*/
-
-/*cursos escuela de desarrollo web*/
-
-let computacionBasica = new cursos({
-    name: "Curso de computacion básica",
-    clases: [
-        paqueteClases[2], // clase no relacional
-        paqueteClases[0], // clase de desarrollo
-        paqueteClases[1], // clase de buen usod e tiempo
-    ],
-    docente: maestrosPlatzi[3],
-})
-
-let algoritmosPensamientoLogico = new cursos({
-    name: "Curso de algoritmos y pensamiento lógico",
-    clases: [
-        paqueteClases[8], // Solucionando problemas de la vida real con JS
-        paqueteClases[0], // clase de desarrollo
-        paqueteClases[2], // clase no relacional
-    ],
-    docente: maestrosPlatzi[3],
-})
-
-let gitYHub = new cursos({
-    name: "Curso profesional de git y hub",
-    clases: [
-        paqueteClases[9], // "¿que es git y como usarlo?"
-        paqueteClases[10], // "¿como desarrollar proyectos reales con git?"
-        paqueteClases[0],// clase de desarrllo
-        paqueteClases[6] // despedida del curso
-    ],
-    docente: maestrosPlatzi[0],
-})
-/*cierre escuela de desarrollo web*/
-
-/*curso escuela de programacion y desarrollo de software*/
-
-let tecnologiaG = new cursos({
-    name: "Curso de tecnologia para gerentes",
-    clases: [
-        paqueteClases[11], // "¿por que es necesaria la tecnologia en las empresas"
-        paqueteClases[9], // "¿que es git y como usarlo?"
-        paqueteClases[8] // Solucionando problemas de la vida real con JS
-    ],
-    docente: maestrosPlatzi[3],
-})
-
-let introduccionWeb = new cursos({
-    name: "Curso de introduccion a la web",
-    clases: [
-        paqueteClases[9], // "¿que es git y como usarlo?"
-        paqueteClases[11], // "¿por que es necesaria la tecnologia en las empresas"
-    ],
-    docente: maestrosPlatzi[3],
-})
-
-/*cierre escuela de programacion y desarrollo de software*/
+import { cursoProgBasica,ecmaScript6,basicoJs,practicoJs,computacionBasica,algoritmosPensamientoLogico,gitYHub,tecnologiaG,introduccionWeb } from "./class_cursos.mjs";
 
 
+import { caminoAprendizaje } from "./class_caminoAprendizaje.mjs";
 
-
-
-
-
-
-
-
-// clase de construccion de rutas de aprendizaje
-class caminoAprendizaje{constructor({nombre,cursos}){this.nombre = nombre;this.cursos = cursos;}}
-
-// instancia de class caminoAprendizaje (muestra la escuela de javascript)
-let escuela1 = new caminoAprendizaje({
-    nombre: "Escuela de JavaScript",
-    cursos: [cursoProgBasica,basicoJs,practicoJs,ecmaScript6,]
-})
-// instancia de class caminoAprendizaje (muestra la escuela de desarrollo web)
-let escuela2 = new caminoAprendizaje({
-    nombre: "Escuela de desarrollo web",
-    cursos: [cursoProgBasica,computacionBasica,algoritmosPensamientoLogico,gitYHub,]
-})
-// instancia de class caminoAprendizaje (muestra la escuela de software)
-let escuela3 = new caminoAprendizaje({
-    nombre: "Escuela de prog. y desarrollo de software",
-    cursos: [cursoProgBasica,computacionBasica,introduccionWeb,tecnologiaG,]
-})
+import { escuela1,escuela2,escuela3 } from "./class_caminoAprendizaje.mjs";
 
 // clase creadora de estudiantes
 class Estudiante{constructor(
