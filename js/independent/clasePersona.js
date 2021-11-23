@@ -202,7 +202,7 @@ persona.prototype.instrucciones = function(){
                 Las instancias del objeto van a estar creadas sobre el prototipo persona,
                 a su vez, el objeto en si mismo, es un prototipo del prototipo object
                 para acceder al nombre, ya que es privado accede con getname, apellido getapellido, correo con getCorreo
-                    por otro lado, para cambiar el valor de los mismos hazlo con set`)
+                por otro lado, para cambiar el valor de los mismos hazlo con set`)
 
 }
 
@@ -226,3 +226,4 @@ persona.prototype.instrucciones = function(){
 //
 //
 //}
+
