@@ -10,16 +10,21 @@ class ExpertStudent extends Student{
         this.cursosConAcceso = cursosConAcceso;
         this.escuelasConAcceso = escuelasConAcceso;
 
-        this.ingresoAEscuela(escuelas);
+        
+        //this.ingresoAEscuela(clasesCursos);
         //this.aCursos(edad);
     }
-    ingresoAEscuela(escuelas){
-        if(escuelas) {
-            return console.log("Felicitaciones has ingresado a una nueva escuela")
+    nuevaEscuela(nuevaEscuela){
+        if(nuevaEscuela) {
+            this.escuelas.push(nuevaEscuela)
+            console.log(`Haz agregado a tu ruta de aprendizaje (${nuevaEscuela.escuela})`)
         }
     }
-    accesoCursos(cursos){
-        return cursos;
+    nuevoCurso(nuevoCurso){
+        if(nuevoCurso){
+            this.cursosAprobados.push(nuevoCurso)
+            console.log(`Haz aprobado (${nuevoCurso.nombreCurso})`)
+        }
     }
 }
 
@@ -33,7 +38,12 @@ let expert1 = new ExpertStudent({
     "Acceso ilimitado a todos los cursos",
     "Acesso ilimitado a todas las escuelas",
 )
-console.log(expert1.accesoCursos(progBasica))
+console.log(expert1.nuevaEscuela(escuelaJs))
+console.log(expert1)
+console.log(expert1.nuevoCurso(practicoJs))
+console.log(expert1)
+//console.log(expert1.getfacebook)
+
 
 
 

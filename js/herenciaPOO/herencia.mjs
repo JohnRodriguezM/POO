@@ -61,6 +61,7 @@ class Student {
             twitter,
             instagram,
         }
+        //metodos de validacion?
     }
     // getter del name;
     get getname(){
@@ -99,7 +100,7 @@ class Student {
     }
 }
 
-
+//
 class clasesCursos {
     constructor(
         {
@@ -232,7 +233,10 @@ let escuelaIngles = new escuelas({
 
 // primer instancia de la clase
 
-
+//let estudiante = new Student({
+//    cursosAprobados : progBasica,
+//})
+//console.log(estudiante)
 
 
 
