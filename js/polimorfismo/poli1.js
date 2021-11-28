@@ -25,7 +25,6 @@ class Student{
         this.edad = edad;
         this.tipoDeSuscripcion = tipoDeSuscripcion;
         this.role = role;
-        
     }
     comentario(comment){
     const comentario = new Comentario({
